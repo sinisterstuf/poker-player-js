@@ -10,6 +10,12 @@ function card(str) {
   return {'suit': SUITS[str.charAt(0).toLowerCase()], 'rank': str.charAt(1).toUpperCase()}
 }
 
+function cards() {
+  return Array.prototype.map.call(arguments, function(item) {
+    return card(item)
+  })
+}
+
 describe("rank", function() {
   describe("#groupBy", function() {
     it("should return empty map for empty array", function() {
@@ -46,6 +52,14 @@ describe("rank", function() {
 
     it("should return pair for pairs", function() {
       assert.deepEqual(rank.rank([card("H5"), card("S5")]), ['pair'])
+    })
+
+    it("should return two pairs in case of two pairs", function() {
+      assert.deepEqual(rank.rank(cards("C3", "S1", "H2", "D1", "D2")), ['two_pairs'])
+    })
+
+    it("should return flush if there's at least five cards and they are in the same suit", function() {
+      assert.deepEqual(rank.rank(cards("H2", "H4", "H6", "H7", "H8")), ['flush'])
     })
   })
 })

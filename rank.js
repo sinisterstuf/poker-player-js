@@ -28,9 +28,12 @@ function count(map) {
   return resultMap;
 }
 
-function indexOf(map, needle) {
-  for (key in map) {
-    var item = map[key]
+function keyOf(array, needle, first_index) {
+  if (typeof first_index == "undefined")
+    first_index = 0
+
+  for (var index = first_index; index < array.length; index++) {
+    var item = array[index]
 
     if (item == needle)
       return key
@@ -41,10 +44,37 @@ function indexOf(map, needle) {
 
 function rank(cards) {
   var byRank = groupBy(cards, 'rank')
+  var bySuit = groupBy(cards, 'suit')
   var rankCounts = count(byRank)
+  var suitCounts = count(bySuit)
+  var result = []
 
-  if (indexOf(rankCounts, 2) != -1)
-    return ['pair']
+  var numberOfPairs = 0
+  var hasFlush = false
 
-  return []
+  for (var rank in rankCounts) {
+    if (rankCounts[rank] == 2) {
+      numberOfPairs++
+    }
+  }
+
+  for (var suit in suitCounts) {
+    if (suitCounts[suit] == 5) {
+      hasFlush = true
+    }
+  }
+
+  if (numberOfPairs > 0) {
+    if (numberOfPairs > 1) {
+      result.push('two_pairs')
+    } else {
+      result.push('pair')
+    }
+  }
+
+  if (hasFlush) {
+    result.push('flush')
+  }
+
+  return result
 }
