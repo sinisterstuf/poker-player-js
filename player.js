@@ -18,7 +18,7 @@ module.exports = {
     if (myself.status != "active") {
         return "OK";
     }
-    if (myseld.hole_cards[1].rank == myseld.hole_cards[1].rank) {
+    if (myself.hole_cards[1].rank == myself.hole_cards[1].rank) {
         return player.stack;
     }
     var average_stack = compute_avg_stack(g.players);
