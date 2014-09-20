@@ -69,7 +69,7 @@ function lameCards(cards) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v4.8",
+    VERSION: "Jofogas's Zsozsobot v4.9",
 
   bet_request: function(g) {
     l("----", this.VERSION);
@@ -109,10 +109,15 @@ module.exports = {
         l("fearlessly raising: ", raise);
         return raise;
     }
-    else {
+    else if (compute_avg_stack >= 1) {
         /* tight */
-        l("fearfully not raising: ", 0);
+        l("calling because cards seem OK");
         return call;
+    }
+    else {
+        /* tighter */
+        l("fold");
+        return 0;
     }
   },
 
