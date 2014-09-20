@@ -61,5 +61,9 @@ describe("rank", function() {
     it("should return flush if there's at least five cards and they are in the same suit", function() {
       assert.deepEqual(rank.rank(cards("H2", "H4", "H6", "H7", "H8")), ['flush'])
     })
+
+    it("should return flush for seven cards too :)", function() {
+      assert.deepEqual(rank.rank(cards("H2", "H4", "H6", "H7", "H8", "HA", "HK")), ['flush'])
+    })
   })
 })
