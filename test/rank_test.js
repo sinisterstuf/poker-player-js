@@ -37,15 +37,15 @@ describe("rank", function() {
 
   describe("#rank", function() {
     it("should return nothing on empty input", function() {
-      assert.equal(rank.rank([]), 'nothing')
+      assert.deepEqual(rank.rank([]), [])
     })
 
     it("should return nothing for cards smaller than 9", function() {
-      assert.equal(rank.rank([card('H5'), card('S6')]), 'nothing')
+      assert.deepEqual(rank.rank([card('H5'), card('S6')]), [])
     })
 
     it("should return pair for pairs", function() {
-      assert.equal(rank.rank([card("H5"), card("S5")]), 'pair')
+      assert.deepEqual(rank.rank([card("H5"), card("S5")]), ['pair'])
     })
   })
 })

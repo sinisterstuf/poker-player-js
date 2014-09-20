@@ -44,7 +44,7 @@ function rank(cards) {
   var rankCounts = count(byRank)
 
   if (indexOf(rankCounts, 2) != -1)
-    return 'pair'
+    return ['pair']
 
-  return "nothing"
+  return []
 }
