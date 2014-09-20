@@ -39,7 +39,7 @@ module.exports = {
         return "OK";
     }
     if (myself.hole_cards[1].rank == myself.hole_cards[1].rank) {
-        return player.stack;
+        return myself.stack;
     }
     var average_stack = compute_avg_stack(g.players);
 
