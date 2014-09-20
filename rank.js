@@ -59,7 +59,10 @@ function rank(cards) {
   }
 
   for (var suit in suitCounts) {
-    if (suitCounts[suit] == 5) {
+    if (suitCounts[suit] == 5 ||
+        suitCounts[suit] == 6 ||
+        suitCounts[suit] == 7)
+    {
       hasFlush = true
     }
   }
