@@ -16,7 +16,7 @@ function toNum(c) {
             break;
 
         default:
-            return card
+            return c;
     }
 }
 
@@ -69,7 +69,7 @@ module.exports = {
     VERSION: "Jofogas's Zsozsobot v4",
 
   bet_request: function(g) {
-    l("----");
+    l("----", this.VERSION);
     l(new Date());
     var myself = g.players[g.in_action];
     var call = g.current_buy_in - myself["bet"];
