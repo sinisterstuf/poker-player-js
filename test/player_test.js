@@ -12,7 +12,7 @@ describe("player", function() {
     describe("#bet_request", function() {
         it("should return a number", function() {
             assert.equal(
-                typeof(player.bet_request(JSON.parse( game_state_sample )).toString()),
+                typeof( player.bet_request(game_state_sample) ),
                 "number"
             )
         })
