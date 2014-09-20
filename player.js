@@ -82,7 +82,7 @@ module.exports = {
         l("Go all in");
         return myself.stack;
       }
-      if (Math.random() > 0.8 || (g.current_buy_in <= g.small_blind * 4 && Math.random() > 0.3) {
+      if (Math.random() > 0.8 || (g.current_buy_in <= g.small_blind * 4 && Math.random() > 0.3)) {
         l("call");
         return call;
       }
