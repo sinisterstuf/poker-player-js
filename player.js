@@ -1,3 +1,4 @@
+l = console.log();
 
 module.exports = {
 
@@ -5,6 +6,7 @@ module.exports = {
 
     bet_request: function(g) {
         bet = g.current_buy_in - g.players[g.in_action]["bet"] + g.minimum_raise;
+        l("fearlessly raising: ", bet);
         return bet;
     },
 
