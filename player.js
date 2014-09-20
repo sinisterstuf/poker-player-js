@@ -56,8 +56,7 @@ function lameCards(cards) {
      )
 
     if (
-        toNum(cards[0].rank) < 9 &&
-        toNum(cards[1].rank) < 9 &&
+        (toNum(cards[0].rank) < 9 || toNum(cards[1].rank) < 9) &&
         cards[0].rank != cards[1].rank
        ) {
         return true
@@ -75,7 +74,7 @@ module.exports = {
     l(new Date());
     var myself = g.players[g.in_action];
     var call = g.current_buy_in - myself["bet"];
-    var min_raise = call + g.minimum_raise;
+    var raise = call + g.current_buy_in;
 
     // just in case!!!
     if (myself.status != "active") {
@@ -105,8 +104,7 @@ module.exports = {
 
     if (myself.stack > average_stack * 0.7) {
         /* brave */
-        var bet = min_raise * 2;
-        l("fearlessly raising: ", bet);
+        l("fearlessly raising: ", raise);
         return bet;
     }
     else {
