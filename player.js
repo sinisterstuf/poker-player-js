@@ -44,6 +44,15 @@ function compute_chip_factor(g) {
 
 function lameCards(cards) {
     // return TRUE if the cards are LAME
+    l(
+        "my cards: ",
+        cards[0].rank,
+        cards[0].suit,
+        " ",
+        cards[1].rank,
+        cards[1].suit
+     )
+
     if (
         toNum(cards[0].rank) < 9 &&
         toNum(cards[1].rank) < 9 &&
@@ -75,10 +84,10 @@ module.exports = {
     if (g.community_cards.length < 1) {
         // we're before flop
         if (lameCards(myself.hole_cards)) {
-            // fold
+            l("folding because cards too lame");
             return 0;
         } else {
-            // call
+            l("calling because cards seem OK");
             return call;
         }
     }
