@@ -108,7 +108,7 @@ module.exports = {
     if (myself.stack > average_stack * 0.99 || Math.random() > 0.6) {
         /* brave */
         l("fearlessly raising: ", raise);
-        return bet;
+        return raise;
     }
     else {
         /* tight */
