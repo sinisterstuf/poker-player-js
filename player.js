@@ -27,6 +27,21 @@ function compute_avg_stack(players) {
     }
     return sum / players.length;
 }
+
+function compute_chip_factor(g) {
+    var average_stack = compute_avg_stack(g.players);
+    var myself = g.players[g.in_action];
+
+    var strength = (myself.stack > average_stack) ? (myself.stack / average_stack) : 0.5;
+
+    if (g.current_buy_in < g.pot) {
+        return strength;
+    }
+    else {
+        return strength * g.pot / g.current_buy_in;
+    }
+}
+
 module.exports = {
 
     VERSION: "Jofogas's Zsozsobot v3.2",
