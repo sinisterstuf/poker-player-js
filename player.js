@@ -2,7 +2,7 @@ l = console.log();
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v2",
+    VERSION: "Jofogas's Zsozsobot v3",
 
   compute_avg_stack: function(players) {
       var sum = 0;
