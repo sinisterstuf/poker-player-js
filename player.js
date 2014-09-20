@@ -77,7 +77,7 @@ module.exports = {
     l(new Date());
     var myself = g.players[g.in_action];
     var call = g.current_buy_in - myself["bet"];
-    var raise = call + g.current_buy_in * (0.8 + Math.random() * 0.5);
+    var raise = Math.round(call + g.current_buy_in * (1 + Math.random()));
 
     // just in case!!!
     if (myself.status != "active") {
