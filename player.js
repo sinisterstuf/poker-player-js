@@ -29,7 +29,7 @@ module.exports = {
       for (var i in players) {
           sum += players.stack;
       }
-      return sum / players.count;
+      return sum / players.length;
   },
 
   bet_request: function(g) {
