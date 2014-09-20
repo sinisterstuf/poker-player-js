@@ -105,7 +105,7 @@ module.exports = {
     l("My stack is : ", myself.stack);
     l("chip_factor returns: ", compute_chip_factor(g));
 
-    if (myself.stack > average_stack * 0.99 || Math.random() > 0.6) {
+    if (compute_chip_factor > 3 || Math.random() > 0.6) {
         /* brave */
         l("fearlessly raising: ", raise);
         return raise;
