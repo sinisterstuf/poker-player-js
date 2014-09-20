@@ -1,4 +1,4 @@
-l = console.log();
+l = console.log;
 
 function toNum(c) {
     switch(c) {
