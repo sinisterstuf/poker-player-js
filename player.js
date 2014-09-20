@@ -44,7 +44,7 @@ function compute_chip_factor(g) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v3.2",
+    VERSION: "Jofogas's Zsozsobot v3.3",
 
   bet_request: function(g) {
     var myself = g.players[g.in_action];
