@@ -22,14 +22,14 @@ function toNum(c) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v3.1",
+    VERSION: "Jofogas's Zsozsobot v3",
 
   compute_avg_stack: function(players) {
       var sum = 0;
       for (var i in players) {
           sum += players.stack;
       }
-      return sum / players.length;
+      return sum / players.count;
   },
 
   bet_request: function(g) {
@@ -38,7 +38,7 @@ module.exports = {
     if (myself.status != "active") {
         return "OK";
     }
-    if (myself.hole_cards[1].rank == myself.hole_cards[1].rank) {
+    if (myself.hole_cards[0].rank == myself.hole_cards[1].rank) {
         return myself.stack;
     }
     var average_stack = compute_avg_stack(g.players);
