@@ -69,7 +69,7 @@ function lameCards(cards) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v4.9",
+    VERSION: "Jofogas's Zsozsobot v4.10",
 
   bet_request: function(g) {
     l("----", this.VERSION);
@@ -94,8 +94,14 @@ module.exports = {
               l("Go all in");
               return myself.stack;
             }
-            l("calling because cards seem OK");
-            return call;
+            if (compute_chip_factor() > 3) {
+              l("calling because cards seem OK");
+              return call;
+            }
+            else {
+              l("folding because we are scared");
+              return 0;
+            }
         }
     }
 
@@ -104,7 +110,7 @@ module.exports = {
     l("My stack is : ", myself.stack);
     l("chip_factor returns: ", compute_chip_factor(g));
 
-    if (compute_chip_factor > 3 || Math.random() > 0.6) {
+    if (compute_chip_factor() > 3 || Math.random() > 0.6) {
         /* brave */
         l("fearlessly raising: ", raise);
         return raise;
