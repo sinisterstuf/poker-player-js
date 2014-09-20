@@ -2,7 +2,9 @@ var player;
 try {
     player = require('./player');
 }
-catch(any) {};
+catch(any) {
+    console.log(any);
+}
 var express = require('express');
 var app = express();
 
