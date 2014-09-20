@@ -1,3 +1,5 @@
+var rank = require('rank');
+
 l = console.log;
 
 function toNum(c) {
@@ -98,7 +100,7 @@ module.exports = {
     }
 
     var average_stack = compute_avg_stack(g.players);
-    l("Average stack is: ", average_stack); 
+    l("Average stack is: ", average_stack);
     l("My stack is : ", myself.stack);
     l("chip_factor returns: ", compute_chip_factor(g));
 
