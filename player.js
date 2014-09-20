@@ -91,7 +91,7 @@ module.exports = {
             l("folding because cards too lame");
             return 0;
         } else {
-            if (toNum(myself.hole_cards[0].rank) > 9) {
+            if (toNum(myself.hole_cards[0].rank) > 9 && toNum(myself.hole_cards[0].rank) > 9) {
               l("Go all in");
               return myself.stack;
             }
