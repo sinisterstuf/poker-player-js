@@ -2,14 +2,14 @@ l = console.log();
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v3",
+    VERSION: "Jofogas's Zsozsobot v3.1",
 
   compute_avg_stack: function(players) {
       var sum = 0;
       for (var i in players) {
           sum += players.stack;
       }
-      return sum / players.count;
+      return sum / players.length;
   },
 
   bet_request: function(g) {
