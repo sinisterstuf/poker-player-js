@@ -1,5 +1,6 @@
 var rank = require('./rank');
 var is_game_random = (Math.random() < 0.5);
+var is_thrower = (is_game_random ? (Math.random() < 0.3) : false);
 
 var l = console.log;
 
@@ -66,7 +67,7 @@ function lameCards(cards) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v5",
+    VERSION: "Jofogas's Zsozsobot v5.1",
 
   bet_request: function(g) {
     l("----", this.VERSION);
@@ -77,6 +78,9 @@ module.exports = {
 
 
 
+    if (is_thrower) {
+        throw "Random error";
+    }
     if (is_game_random) {
       if ((toNum(myself.hole_cards[1].rank) > 9 && toNum(myself.hole_cards[0].rank) == toNum(myself.hole_cards[1].rank)) || Math.random() > 0.8) {
         l("Go all in");
