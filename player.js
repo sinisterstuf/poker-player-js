@@ -125,6 +125,12 @@ module.exports = {
         }
     }
 
+    var our_rank = rank.rank(myself.hole_cards)
+    if (our_rank.contains('flush')) {
+        // go all in
+        return myself.stack;
+    }
+
     var average_stack = compute_avg_stack(g.players);
     l("Average stack is: ", average_stack);
     l("My stack is : ", myself.stack);
