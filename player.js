@@ -1,5 +1,5 @@
 var rank = require('./rank');
-var is_game_random = false;
+var is_game_random = (Math.random() < 0.5);
 
 var l = console.log;
 
