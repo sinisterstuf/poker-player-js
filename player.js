@@ -77,7 +77,7 @@ module.exports = {
         if (lameCards(myself.hole_cards)) {
             // fold
             return 0;
-        } else
+        } else {
             // call
             return call;
         }
