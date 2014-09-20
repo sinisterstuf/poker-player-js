@@ -27,6 +27,7 @@ app.post('/', function(req, res){
     }
   }
   catch(any) {
+    console.log(any);
     res.send(200, 'OK')
   };
 });
