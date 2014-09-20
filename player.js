@@ -1,7 +1,7 @@
 
 module.exports = {
 
-  VERSION: "Default JavaScript folding player",
+  VERSION: "Jofogas's Zsozsobot v1",
 
   bet_request: function(game_state) {
     return 5;
