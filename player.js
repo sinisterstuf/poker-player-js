@@ -66,7 +66,7 @@ function lameCards(cards) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v4",
+    VERSION: "Jofogas's Zsozsobot v4.1",
 
   bet_request: function(g) {
     l("----", this.VERSION);
