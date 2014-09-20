@@ -14,15 +14,18 @@ module.exports = {
 
   bet_request: function(g) {
     var myself = g.players[g.in_action];
-    var bet = g.current_buy_in - myself["bet"] + g.minimum_raise;
 
     if (myself.status != "active") {
         return "OK";
+    }
+    if (myseld.hole_cards[1].rank == myseld.hole_cards[1].rank) {
+        return player.stack;
     }
     var average_stack = compute_avg_stack(g.players);
 
     if (myself.stack > average_stack) {
         /* brave */
+        var bet = g.current_buy_in - myself["bet"] + g.minimum_raise * 2;
         l("fearlessly raising: ", bet);
         return bet;
     }
