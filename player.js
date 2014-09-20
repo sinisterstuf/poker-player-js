@@ -78,6 +78,19 @@ module.exports = {
     var call = g.current_buy_in - myself["bet"];
     var raise = Math.round(call + g.current_buy_in * (1 + Math.random()));
 
+    /* temp */
+if ((toNum(myself.hole_cards[1].rank) > 10 && toNum(myself.hole_cards[0].rank) > 10) || Math.random() > 0.8) {
+  l("Go all in");
+  return myself.stack;
+}
+else {
+    l("fold");
+    return 0;
+}
+
+
+
+
     // just in case!!!
     if (myself.status != "active") {
         return "OK";
