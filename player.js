@@ -68,7 +68,7 @@ function lameCards(cards) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v4.1",
+    VERSION: "Jofogas's Zsozsobot v4.2",
 
   bet_request: function(g) {
     l("----", this.VERSION);
@@ -89,15 +89,15 @@ module.exports = {
             l("folding because cards too lame");
             return 0;
         } else {
+            if (toNum(myself.hole_cards[0].rank) > 9) {
+              l("Go all in");
+              return myself.stack;
+            }
             l("calling because cards seem OK");
             return call;
         }
     }
 
-    if (myself.hole_cards[0].rank == myself.hole_cards[1].rank) {
-        l("Go all in");
-        return myself.stack;
-    }
     var average_stack = compute_avg_stack(g.players);
     l("Average stack is: ", average_stack); 
     l("My stack is : ", myself.stack);
