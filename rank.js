@@ -50,11 +50,16 @@ function rank(cards) {
   var result = []
 
   var numberOfPairs = 0
+  var numberOfThrees = 0
   var hasFlush = false
 
   for (var rank in rankCounts) {
     if (rankCounts[rank] == 2) {
       numberOfPairs++
+    }
+
+    if (rankCounts[rank] == 3) {
+      numberOfThrees++
     }
   }
 
@@ -69,10 +74,16 @@ function rank(cards) {
 
   if (numberOfPairs > 0) {
     if (numberOfPairs > 1) {
-      result.push('two_pairs')
+      if (numberOfThrees > 0) {
+        result.push('full_house')
+      } else {
+        result.push('two_pairs')
+      }
     } else {
       result.push('pair')
     }
+  } else if (numberOfThrees > 0) {
+    result.push('tree_of_a_kind')
   }
 
   if (hasFlush) {
