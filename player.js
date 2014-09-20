@@ -1,3 +1,4 @@
+console.log(Math.random());
 var rank = require('./rank');
 
 l = console.log;
@@ -69,14 +70,14 @@ function lameCards(cards) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v4.4",
+    VERSION: "Jofogas's Zsozsobot v4.5",
 
   bet_request: function(g) {
     l("----", this.VERSION);
     l(new Date());
     var myself = g.players[g.in_action];
     var call = g.current_buy_in - myself["bet"];
-    var raise = call + g.current_buy_in;
+    var raise = call + g.current_buy_in * (0.8 + Math.random() * 0.5);
 
     // just in case!!!
     if (myself.status != "active") {
@@ -104,7 +105,7 @@ module.exports = {
     l("My stack is : ", myself.stack);
     l("chip_factor returns: ", compute_chip_factor(g));
 
-    if (myself.stack > average_stack * 0.7) {
+    if (myself.stack > average_stack * 0.99 || Math.random() > 0.6) {
         /* brave */
         l("fearlessly raising: ", raise);
         return bet;

@@ -3,3 +3,4 @@ express.pid
 node_modules
 *.iml
 *.log
+.*.swp
