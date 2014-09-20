@@ -1,4 +1,3 @@
-console.log(Math.random());
 var rank = require('./rank');
 
 l = console.log;
@@ -70,7 +69,7 @@ function lameCards(cards) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v4.6",
+    VERSION: "Jofogas's Zsozsobot v4.7",
 
   bet_request: function(g) {
     l("----", this.VERSION);
