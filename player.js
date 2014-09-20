@@ -58,7 +58,7 @@ module.exports = {
     }
     var average_stack = compute_avg_stack(g.players);
 
-    if (myself.stack > average_stack) {
+    if (myself.stack > average_stack * 0.7) {
         /* brave */
         var bet = g.current_buy_in - myself["bet"] + g.minimum_raise * 2;
         l("fearlessly raising: ", bet);
