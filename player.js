@@ -20,21 +20,21 @@ function toNum(c) {
     }
 }
 
+function compute_avg_stack(players) {
+    var sum = 0;
+    for (var i in players) {
+        sum += players.stack;
+    }
+    return sum / players.length;
+}
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v3",
-
-  compute_avg_stack: function(players) {
-      var sum = 0;
-      for (var i in players) {
-          sum += players.stack;
-      }
-      return sum / players.length;
-  },
+    VERSION: "Jofogas's Zsozsobot v3.2",
 
   bet_request: function(g) {
     var myself = g.players[g.in_action];
 
+    // just in case!!!
     if (myself.status != "active") {
         return "OK";
     }
