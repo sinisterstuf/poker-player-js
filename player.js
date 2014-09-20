@@ -1,5 +1,5 @@
 var rank = require('./rank');
-var is_game_random = true;
+var is_game_random = false;
 
 var l = console.log;
 
@@ -66,7 +66,7 @@ function lameCards(cards) {
 
 module.exports = {
 
-    VERSION: "Jofogas's Zsozsobot v4.112",
+    VERSION: "Jofogas's Zsozsobot v5";
 
   bet_request: function(g) {
     l("----", this.VERSION);
