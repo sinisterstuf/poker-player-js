@@ -1,22 +1,18 @@
 var rank = require('./rank');
 var is_game_random = true;
 
-l = console.log;
+var l = console.log;
 
 function toNum(c) {
-    switch(c) {
+    switch (c) {
         case 'J':
             return 11;
-            break;
         case 'Q':
             return 12;
-            break;
         case 'K':
             return 13;
-            break;
         case 'A':
             return 14;
-            break;
 
         default:
             return c;
