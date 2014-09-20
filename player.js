@@ -1,13 +1,14 @@
 
 module.exports = {
 
-  VERSION: "Jofogas's Zsozsobot v1",
+  VERSION: "Jofogas's Zsozsobot v2",
 
-  bet_request: function(game_state) {
-    return 5;
+  bet_request: function(g) {
+    bet = g.current_buy_in - g.players[g.in_action]["bet"] + g.minimum_raise;
+    return bet;
   },
 
-  showdown: function(game_state) {
+  showdown: function(g) {
 
   }
 };
