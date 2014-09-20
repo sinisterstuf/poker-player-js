@@ -1,5 +1,25 @@
 l = console.log();
 
+function toNum(c) {
+    switch(c) {
+        case 'J':
+            return 11;
+            break;
+        case 'Q':
+            return 12;
+            break;
+        case 'K':
+            return 13;
+            break;
+        case 'A':
+            return 14;
+            break;
+
+        default:
+            return card
+    }
+}
+
 module.exports = {
 
     VERSION: "Jofogas's Zsozsobot v3.1",
@@ -19,7 +39,7 @@ module.exports = {
         return "OK";
     }
     if (myself.hole_cards[1].rank == myself.hole_cards[1].rank) {
-        return player.stack;
+        return myself.stack;
     }
     var average_stack = compute_avg_stack(g.players);
 
@@ -37,6 +57,6 @@ module.exports = {
   },
 
     showdown: function(g) {
-
+        return 'what is this for?';
     }
 };
