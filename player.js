@@ -107,7 +107,7 @@ else {
               l("Go all in");
               return myself.stack;
             }
-            if (compute_chip_factor() > 3) {
+            if (compute_chip_factor(g) > 3) {
               l("calling because cards seem OK");
               return call;
             }
@@ -123,7 +123,7 @@ else {
     l("My stack is : ", myself.stack);
     l("chip_factor returns: ", compute_chip_factor(g));
 
-    if (compute_chip_factor() > 3 || Math.random() > 0.6) {
+    if (compute_chip_factor(g) > 3 || Math.random() > 0.6) {
         /* brave */
         l("fearlessly raising: ", raise);
         return raise;
