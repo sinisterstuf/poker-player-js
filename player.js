@@ -23,7 +23,7 @@ function toNum(c) {
 function compute_avg_stack(players) {
     var sum = 0;
     for (var i in players) {
-        sum += players.stack;
+        sum += players[i].stack;
     }
     return sum / players.length;
 }
