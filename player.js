@@ -54,9 +54,12 @@ module.exports = {
         return "OK";
     }
     if (myself.hole_cards[0].rank == myself.hole_cards[1].rank) {
+        l("Go all in");
         return myself.stack;
     }
     var average_stack = compute_avg_stack(g.players);
+    l("Average stack is: ", average_stack); 
+    l("My stack is : ", myself.stack);
 
     if (myself.stack > average_stack * 0.7) {
         /* brave */
